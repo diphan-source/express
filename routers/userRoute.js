@@ -18,9 +18,9 @@ router.post('/register', register);
 
 //crud routes
 router.get('/users',getAllUsers);
-router.get('/users/:id',auth , isOwner , generateAccessToken,getUserById);
-router.put('/users/:id',auth , isOwner , generateAccessToken,updateUserById);
-router.delete('/users/:id',auth , isOwner , generateAccessToken,deleteUserById); 
+router.get('/users/:id',auth , isOwner,getUserById);
+router.put('/users/:id',auth , isOwner ,updateUserById);
+router.delete('/users/:id',auth , isOwner ,deleteUserById); 
 
 
 

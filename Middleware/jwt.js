@@ -19,7 +19,7 @@ const generateAccessToken = (user) => {
 
     //check if the user is the owner of the post to be deleted
     const isOwner = (req, res, next) => {
-        if (req.user.id === req.params.userId) {
+        if (req.user.id === parseInt(req.params.id)) {
             next();
         } else {
             res.status(403).send("You are not authorized to perform this action");

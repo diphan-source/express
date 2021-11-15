@@ -17,6 +17,7 @@ const getAllUsers = (req, res) => {
 const getUserById = (req, res) => {
     const user = users.find((user) => user.id === parseInt(req.params.id));
     if (!user) return res.status(404).send("The user with the given ID was not found.");
+    // console.log(user);
     res.status(200).json({
         id: user.id,
         name: user.name,
