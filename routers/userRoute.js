@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const {auth , generateAccessToken , isOwner} = require('../Middleware/jwt');
+const {auth  , isOwner} = require('../Middleware/jwt');
 const {login , register} = require('../controllers/authController');
 const {getAllUsers , getUserById , updateUserById , deleteUserById} = require('../controllers/userController');
 //create a router instance
