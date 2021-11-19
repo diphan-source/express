@@ -29,8 +29,8 @@ updateBlog = (req, res) => {
 //create a blog
 createBlog = (req, res) => {
   const { title, content} = req.body;
-  const userId = req.userId;
-  if (!title || !content || !userId)
+  const userId = req.user.id;
+  if (!title || !content )
     return res.status(400).send("Please fill in all fields.");
   const newBlog = {
     id: blogs.length + 1,
@@ -39,7 +39,7 @@ createBlog = (req, res) => {
     userId,
   };
   blogs.push(newBlog);
-  res.status(201).json(newBlog);
+  res.status(201).json(blogs);
 };
 
 //delete a blog
